@@ -1,0 +1,17 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "Pseudo": "Prime",
+      "beasts": [
+        {
+          "beastId": "1",
+          "hp": 10000,
+          "def": 100,
+          "atk": 500,
+          "speed": 100
+        }
+      ]
+    }
+  ]
+}

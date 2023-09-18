@@ -1,7 +1,7 @@
 {
   "players": [
     {
-      "name": "Player 1",
+      "id": "1",
       "characters": [
         {
           "name": "Character 1",
