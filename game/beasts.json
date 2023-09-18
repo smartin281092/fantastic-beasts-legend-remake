@@ -1,10 +1,18 @@
 {
-  "1": {
-    name: "White Tiger",
-    skills: [
-      1,
-      2,
-      3
-    ]
-  }
+  "beasts": [
+      {
+        "id": "1",
+        "name": "White Tiger",
+        "skills": [
+          1,
+          2,
+          3
+        ],
+        "hp": 5000,
+        "def": 200,
+        "atk": 800,
+        "speed": 120
+      }
+
+  ]
 }
