@@ -1,0 +1,84 @@
+{
+  "players": [
+    {
+      "name": "Player 1",
+      "characters": [
+        {
+          "name": "Character 1",
+          "class": "Warrior",
+          "level": 10,
+          "hp": 100,
+          "mp": 50
+        },
+        {
+          "name": "Character 2",
+          "class": "Mage",
+          "level": 8,
+          "hp": 80,
+          "mp": 100
+        },
+        {
+          "name": "Character 3",
+          "class": "Rogue",
+          "level": 12,
+          "hp": 90,
+          "mp": 60
+        },
+        {
+          "name": "Character 4",
+          "class": "Cleric",
+          "level": 9,
+          "hp": 120,
+          "mp": 70
+        },
+        {
+          "name": "Character 5",
+          "class": "Bard",
+          "level": 7,
+          "hp": 70,
+          "mp": 120
+        }
+      ]
+    },
+    {
+      "name": "Player 2",
+      "characters": [
+        {
+          "name": "Character 1",
+          "class": "Wizard",
+          "level": 11,
+          "hp": 70,
+          "mp": 130
+        },
+        {
+          "name": "Character 2",
+          "class": "Paladin",
+          "level": 9,
+          "hp": 110,
+          "mp": 40
+        },
+        {
+          "name": "Character 3",
+          "class": "Druid",
+          "level": 10,
+          "hp": 100,
+          "mp": 90
+        },
+        {
+          "name": "Character 4",
+          "class": "Barbarian",
+          "level": 11,
+          "hp": 150,
+          "mp": 20
+        },
+        {
+          "name": "Character 5",
+          "class": "Sorcerer",
+          "level": 8,
+          "hp": 60,
+          "mp": 140
+        }
+      ]
+    }
+  ]
+}
