@@ -2,8 +2,13 @@
   "skills": [
       {
         "id": "1",
-        "name": "Fiery Lava"
+        "name": "Normal Attack",
+        "type": "normal",
+        "effects": [
+          {
+            "id": "1"
+          }
+        ]
       }
-
   ]
 }
