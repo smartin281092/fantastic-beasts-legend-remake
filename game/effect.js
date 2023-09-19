@@ -2,9 +2,10 @@ const Db = require('./db');
 
 
 class Effect {
-  constructor(data) {
-    const data = data;
-    
+  constructor(data, target, caster) {
+    this.data = data;
+    this.target = target;
+    this.caster = caster;
   }
 }
 

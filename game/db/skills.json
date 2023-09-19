@@ -4,9 +4,11 @@
         "id": "1",
         "name": "Normal Attack",
         "type": "normal",
+        "active": true,
         "effects": [
           {
-            "id": "1"
+            "id": "1",
+            "perAtk": 100
           }
         ]
       }

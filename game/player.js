@@ -4,15 +4,15 @@ const Beast = require('./beast');
 
 class Player {
   constructor(id) {
-    const data = Db.getElementById(id, 'players');
+    this.data = Db.getElementById(id, 'players');
 
-    let beasts = {};
+    this.beasts = {};
     
-    for(let beastId of data.beasts) {
-      beasts[beastId.id] = new Beast(beastId.id);
+    for(let beastId of this.data.beasts) {
+      this.beasts[beastId.id] = new Beast(beastId.id);
     }
     
-    console.log('Player : ', beasts);
+    console.log('Player : ', this.beasts);
   }
   
   getId() {
