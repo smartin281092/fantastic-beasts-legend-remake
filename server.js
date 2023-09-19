@@ -1,13 +1,12 @@
 const fs = require('fs');
+const Db = require('./db');
 
 function createParty() {
-  // Read the data.json file to get the list of characters
-  const challengeJsonData = fs.readFileSync('game/challenge.json', 'utf-8');
-  const challengeData = JSON.parse(challengeJsonData);
-  
+  const challengeData = Db.getChallenge('1');
+    
   console.log(challengeData.players);
   
-  return data;
+  return challengeData;
 }
 
 // Example usage:

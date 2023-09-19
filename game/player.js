@@ -1,14 +1,15 @@
 const fs = require('fs');
-
+const Db = require('./db');
 
 class Player {
-  constructor(data) {
-    const playerJsonData = fs.readFileSync('./player.json', 'utf-8');
-    const playerData = JSON.parse(playerJsonData);
+  constructor(id) {
+    const data = Db.getPlayer(id);
+    
+    console.log(data);
   }
   
   getId() {
-    return this.playerData.id;
+    return this.data.id;
   }
 
 }
