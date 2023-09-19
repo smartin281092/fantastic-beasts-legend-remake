@@ -3,37 +3,45 @@ const Skill = require('./skill');
 
 
 class Beast {
-  constructor(data, playerId) {
+  constructor(data, player) {
     this.data = data;
-    this.playerId = playerId;
+    this.player = player;
     
     this.beastData = Db.getElementById(this.data.classId, 'beasts');
+    this.atk = this.data.atk + this.beastData.atk;
+    this.def = this.data.def + this.beastData.def;
+    this.hp = this.data.hp + this.beastData.hp;
+    this.speed = this.data.speed + this.beastData.speed;
     
     this.skills = {};
     for(let skillId of this.data.skills) {
-      this.skills[skillId] = new Skill(skillId);
+      this.skills[skillId] = new Skill(skillId, this);
     }
   }
   
   removeHp(value) {
-    if(this.data.hp > 0) this.data.hp -= value;
-    console.log(`${this.data.name} lose ${value} HP! HP : ${this.data.hp}`);
+    if(this.getHp() > 0) this.hp -= value;
+    console.log(`${this.data.name} lose ${value} HP! HP : ${this.hp}`);
+    
+    if(this.hp <= 0) {
+      console.log(`${this.beastData.name} from ${this.player.getPseudo()} is dead!`)
+    }
   }
   
   getAtk() {
-    return (this.data.atk + this.beastData.atk);
+    return this.atk;
   }
   
   getDef() {
-    return (this.data.def + this.beastData.def);
+    return this.def;
   }
   
   getHp() {
-    return (this.data.hp + this.beastData.hp);
+    return this.hp;
   }
     
   getSpeed() {
-    return (this.data.speed + this.beastData.speed);
+    return this.speed;
   }
   
   getId() {
