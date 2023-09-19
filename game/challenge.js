@@ -8,7 +8,7 @@ class Challenge {
     
     this.playersId.forEach((playerId) => {
       const player = new Player(playerId);
-      this.players[player.getId] = player;
+      this.players[player.getId()] = player;
     })
     
     console.log(this.players);
