@@ -14,7 +14,8 @@ class Skill {
     }
   }
   
-  applyEffects(target) {
+  play(challenge) {
+    let target = challenge;
     for(let effect in this.effects) {
       effect.applyEffect(target);
     }
