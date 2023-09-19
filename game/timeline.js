@@ -17,7 +17,8 @@ class Timeline {
   }
   
   sort() {
-    this.roster((beastA, beastB) => beastB.getSpeed() - beastA.getSpeed());
+    this.roster((beastA, beastB) => beastB.getSecond() - beastA.getSecond());
+    console.log('Roster ordered list : ', this.roster)
   }
 }
 

@@ -25,3 +25,5 @@ class Formula {
     return num;
   }
 }
+
+module.exports = Formula;

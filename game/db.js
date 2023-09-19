@@ -5,7 +5,7 @@ const path = require('path');
 class Db {
   constructor() {}
   
-  static getElementById(id, table) {    
+  static getElementById(id, table) { 
     try {
       const jsonPath = path.join(__dirname, `./db/${table}.json`);
       const jsonData = fs.readFileSync(jsonPath, 'utf-8');

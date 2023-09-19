@@ -4,7 +4,9 @@ const Effect = require('./effect');
 
 class Skill {
   constructor(id, caster) {
-    this.data = Db.getElementById(id, 'effects');
+    this.id = id;
+    this.data = Db.getElementById(id, 'skills');
+    
     this.caster = caster;
     
     this.effects = {};

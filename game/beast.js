@@ -7,8 +7,8 @@ class Beast {
   constructor(data, player) {
     this.data = data;
     this.player = player;
-    
     this.beastData = Db.getElementById(this.data.classId, 'beasts');
+    
     this.atk = this.data.atk + this.beastData.atk;
     this.def = this.data.def + this.beastData.def;
     this.hp = this.data.hp + this.beastData.hp;
@@ -17,7 +17,7 @@ class Beast {
     this.second = this.summoningSpeed;
     
     this.skills = {};
-    for(let skillId of this.data.skills) {
+    for(let skillId of this.beastData.skills) {
       this.skills[skillId] = new Skill(skillId, this);
     }
   }
@@ -45,6 +45,10 @@ class Beast {
     
   getSpeed() {
     return this.speed;
+  }
+  
+  getSecond() {
+    return this.second;
   }
   
   getId() {
