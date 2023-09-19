@@ -15,6 +15,7 @@ class Player {
     console.log('Player : ', this.beasts);
   }
   
+  
   getId() {
     return this.data.id;
   }

@@ -13,6 +13,11 @@ class Beast {
     }
   }
   
+  removeHp(value) {
+    if(this.data.hp > 0) this.data.hp -= value;
+    console.log(`${this.data.name} lose ${value} HP! HP : ${this.data.hp}`);
+  }
+  
   getId() {
     return this.data.id;
   }
