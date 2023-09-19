@@ -6,11 +6,9 @@ class Db {
   constructor() {}
   
   // On va récupérer les données du joueur dans la table players.json  
-  static getElementById(id, table) {
-    console.log('db', id, table);
-    
+  static getElementById(id, table) {    
     try {
-      const jsonPath = path.join(__dirname, `${table}.json`);
+      const jsonPath = path.join(__dirname, `./db/${table}.json`);
       const jsonData = fs.readFileSync(jsonPath, 'utf-8');
       const data = JSON.parse(jsonData);
 

@@ -8,10 +8,10 @@
           2,
           3
         ],
-        "hp": 5000,
-        "def": 200,
-        "atk": 800,
-        "speed": 120
+        "baseHp": 5000,
+        "baseDef": 200,
+        "baseAtk": 800,
+        "baseSpeed": 120
       }
 
   ]
