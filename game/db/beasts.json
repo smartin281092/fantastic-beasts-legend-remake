@@ -3,13 +3,15 @@
       {
         "id": "1",
         "name": "Hou",
+        "typeId": "1",
+        "positionId": "1",
         "skills": [
           1
         ],
-        "baseHp": 1234,
-        "baseDef": 28,
-        "baseAtk": 170,
-        "baseSpeed": 158
+        "hp": 1234,
+        "def": 28,
+        "atk": 170,
+        "speed": 158
       }
 
   ]

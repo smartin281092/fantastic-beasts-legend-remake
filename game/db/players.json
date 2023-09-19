@@ -7,8 +7,6 @@
         {
           "id": "1",
           "classId": "1",
-          "typeId": "1",
-          "positionId": "1",
           "hp": 310,
           "def": 10,
           "atk": 100,

@@ -3,13 +3,15 @@ const Skill = require('./skill');
 
 
 class Beast {
-  constructor(id, playerData) {
-    const data = Db.getElementById(id, 'beasts');
+  constructor(data, playerId) {
+    this.data = data;
+    this.playerId = playerId;
     
-    let skills = {};
+    this.beastData = Db.getElementById(this.data.classId, 'beasts');
     
-    for(let skillId of data.skills) {
-      skills[skillId] = new Skill(skillId);
+    this.skills = {};
+    for(let skillId of this.data.skills) {
+      this.skills[skillId] = new Skill(skillId);
     }
   }
   
@@ -19,11 +21,19 @@ class Beast {
   }
   
   getAtk() {
-    return this.data.atk;
+    return (this.data.atk + this.beastData.atk);
   }
   
   getDef() {
-    return this.data.def;
+    return (this.data.def + this.beastData.def);
+  }
+  
+  getHp() {
+    return (this.data.hp + this.beastData.hp);
+  }
+    
+  getSpeed() {
+    return (this.data.speed + this.beastData.speed);
   }
   
   getId() {
