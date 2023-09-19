@@ -13,6 +13,9 @@ class Formula {
   }
   
   static calculDamage(value, caster, target) {
-    let num = value * calcul
+    let num = value * this.calculRes(target);
+    
+    console.log('calculated damage : ', num);
+    return num;
   }
 }

@@ -18,6 +18,14 @@ class Beast {
     console.log(`${this.data.name} lose ${value} HP! HP : ${this.data.hp}`);
   }
   
+  getAtk() {
+    return this.data.atk;
+  }
+  
+  getDef() {
+    return this.data.def;
+  }
+  
   getId() {
     return this.data.id;
   }
