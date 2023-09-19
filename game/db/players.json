@@ -9,10 +9,10 @@
           "classId": "1",
           "typeId": "1",
           "positionId": "1",
-          "hp": 10000,
-          "def": 100,
-          "atk": 500,
-          "speed": 10
+          "hp": 310,
+          "def": 10,
+          "atk": 100,
+          "speed": 4
         }
       ]
     },
@@ -25,10 +25,10 @@
           "classId": "1",
           "typeId": "1",
           "positionId": "1",
-          "hp": 10000,
-          "def": 100,
-          "atk": 500,
-          "speed": 10
+          "hp": 300,
+          "def": 15,
+          "atk": 30,
+          "speed": 8
         }
       ]
     }

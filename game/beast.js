@@ -3,7 +3,7 @@ const Skill = require('./skill');
 
 
 class Beast {
-  constructor(id) {
+  constructor(id, playerData) {
     const data = Db.getElementById(id, 'beasts');
     
     let skills = {};

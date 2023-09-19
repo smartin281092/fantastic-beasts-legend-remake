@@ -9,7 +9,7 @@ class Player {
     this.beasts = {};
     
     for(let beastId of this.data.beasts) {
-      this.beasts[beastId.id] = new Beast(beastId.id);
+      this.beasts[beastId.id] = new Beast(beastId.id, this.data);
     }
     
     console.log('Player : ', this.beasts);

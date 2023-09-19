@@ -2,16 +2,14 @@
   "beasts": [
       {
         "id": "1",
-        "name": "White Tiger",
+        "name": "Hou",
         "skills": [
-          1,
-          2,
-          3
+          1
         ],
-        "baseHp": 5000,
-        "baseDef": 200,
-        "baseAtk": 800,
-        "baseSpeed": 120
+        "baseHp": 1234,
+        "baseDef": 28,
+        "baseAtk": 170,
+        "baseSpeed": 158
       }
 
   ]
