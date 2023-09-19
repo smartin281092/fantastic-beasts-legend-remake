@@ -1,5 +1,6 @@
 const Db = require('./db');
 const Skill = require('./skill');
+const Formula = require('./formula');
 
 
 class Beast {
@@ -12,6 +13,8 @@ class Beast {
     this.def = this.data.def + this.beastData.def;
     this.hp = this.data.hp + this.beastData.hp;
     this.speed = this.data.speed + this.beastData.speed;
+    this.summoningSpeed = Formula.summoningSpeed(this);
+    this.second = this.summoningSpeed;
     
     this.skills = {};
     for(let skillId of this.data.skills) {

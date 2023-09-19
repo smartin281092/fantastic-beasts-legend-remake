@@ -13,9 +13,15 @@ class Formula {
   }
   
   static calculDamage(value, caster, target) {
-    let num = value * this.calculRes(target);
+    let num = Math.ceil(value * this.calculRes(target));
     
     console.log('calculated damage : ', num);
+    return num;
+  }
+  
+  static summoningSpeed(beast) {
+    let num = (100 / (100 + beast.getSpeed())) * 100;
+    
     return num;
   }
 }
