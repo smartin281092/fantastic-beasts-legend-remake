@@ -5,12 +5,13 @@ const Db = require('./db');
 class Challenge {
   constructor(id) {
     const data = Db.getElementById(id, 'challenges');
-    const players = {};
+    let players = {};
     
-    for(let player of data.players) {
-      
+    for(let playerId of data.players) {
+      players[playerId] = new Player(playerId);
     }
-    console.log(data);
+    
+    console.log(players);
   }
 
 }
