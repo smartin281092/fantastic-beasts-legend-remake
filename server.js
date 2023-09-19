@@ -1,5 +1,5 @@
 const fs = require('fs');
-const Db = require('game/db');
+const Db = require('./game/db');
 
 function createParty() {
   const challengeData = Db.getElementById('1', 'challenges');

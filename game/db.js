@@ -1,11 +1,15 @@
 const fs = require('fs');
+const path = require('path');
+
 
 class Db {
   constructor() {}
   
   // On va récupérer les données du joueur dans la table players.json  
-  getElementById(id, table) {
-    const jsonData = fs.readFileSync(`./${table}.json`, 'utf-8');
+  static getElementById(id, table) {
+    const jsonPath = path.join(__dirname, `${table}.json`);
+    
+    const jsonData = fs.readFileSync(jsonPath, 'utf-8');
     const data = JSON.parse(jsonData);
     const element = {};
     
