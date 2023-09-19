@@ -2,7 +2,8 @@
   "players": [
     {
       "playerId": "1",
-      "playerId": "20"
+      "playerId": "20",
+      "playerId": "2"
     }
   ]
 }
