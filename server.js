@@ -2,9 +2,10 @@ const fs = require('fs');
 
 function createParty() {
   // Read the data.json file to get the list of characters
-  const jsonData = fs.readFileSync('game/challenge.json', 'utf-8');
-  const data = JSON.parse(jsonData);
-  console.log(data);
+  const challengeJsonData = fs.readFileSync('game/challenge.json', 'utf-8');
+  const challengeData = JSON.parse(challengeJsonData);
+  
+  console.log(challengeData.players);
   
   return data;
 }

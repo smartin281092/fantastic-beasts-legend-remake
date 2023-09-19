@@ -1,9 +1,3 @@
 {
-  "players": [
-    {
-      "playerId": "1",
-      "playerId": "20",
-      "playerId": "2"
-    }
-  ]
+  "players": ["1","2"]
 }
