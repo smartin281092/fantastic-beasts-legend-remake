@@ -5,9 +5,8 @@ const Db = require('./db');
 
 class Challenge {
   constructor(playerA, playerB) {
-    this.players = {};
-    this.players.playerA = new Player(playerA);
-    this.players.playerB = new Player(playerB);
+    this.playerA = new Player(playerA);
+    this.playerB = new Player(playerB);
     
     this.timeline;
   }
