@@ -1,7 +1,7 @@
 class Formula {
   constructor(){}
   
-  static calculDamage() {
+  static calculDamage(value, caster, target) {
     
   }
 }
