@@ -1,10 +1,10 @@
 const fs = require('fs');
-const Db = require('./db');
+const Db = require('game/db');
 
 function createParty() {
-  const challengeData = Db.getChallenge('1');
+  const challengeData = Db.getElementById('1', 'challenges');
     
-  console.log(challengeData.players);
+  console.log(challengeData);
   
   return challengeData;
 }

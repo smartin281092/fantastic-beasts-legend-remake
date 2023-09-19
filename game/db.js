@@ -3,40 +3,20 @@ const fs = require('fs');
 class Db {
   constructor() {}
   
-  // On va récupérer les données du joueur dans la table players.json
-  static getPlayer(playerId) {
-    const playersJsonData = fs.readFileSync('./players.json', 'utf-8');
-    const playersData = JSON.parse(playersJsonData);
-    const player = {};
-    
-    for (const playerData of playersData) {
-      if(playerData.id === playerId) {
-        player = playerData;
-        continue;
-      }
-    }
-
-    return player;
-  }
-  
-  static getChallenge(challengeId) {
-    const challengeJsonData = fs.readFileSync('./challenge.json', 'utf-8');
-    const challengeData = JSON.parse(challengeJsonData);
-  }
-  
-  getElement(id, table) {
+  // On va récupérer les données du joueur dans la table players.json  
+  getElementById(id, table) {
     const jsonData = fs.readFileSync(`./${table}.json`, 'utf-8');
-    const playersData = JSON.parse(playersJsonData);
-    const player = {};
+    const data = JSON.parse(jsonData);
+    const element = {};
     
-    for (const playerData of playersData) {
-      if(playerData.id === playerId) {
-        player = playerData;
+    for (const i of data[table]) {
+      if(i.id === id) {
+        element = i;
         continue;
       }
     }
 
-    return player;
+    return element;
   }
 
 }
