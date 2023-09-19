@@ -2,7 +2,7 @@ const Db = require('./db');
 const Effect = require('./effect');
 
 
-class Beast {
+class Skill {
   constructor(id) {
     const data = Db.getElementById(id, 'effects');
     
@@ -19,4 +19,4 @@ class Beast {
 
 }
 
-module.exports = Beast;
+module.exports = Skill;
