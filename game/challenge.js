@@ -1,17 +1,20 @@
 const Player = require('./player');
+const Timeline = require('./timeline');
 const Db = require('./db');
 
 
 class Challenge {
-  constructor(id) {
-    this.data = Db.getElementById(id, 'challenges');
+  constructor(playerA, playerB) {
     this.players = {};
+    this.players.playerA = new Player(playerA);
+    this.players.playerB = new Player(playerB);
     
-    for(let playerId of this.data.players) {
-      this.players[playerId] = new Player(playerId);
-    }
+    this.timeline;
   }
-
+  
+  start() {
+    this.timeline = new Timeline(this);
+  }
 }
 
 module.exports = Challenge;
