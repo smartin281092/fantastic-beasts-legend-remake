@@ -1,5 +1,5 @@
 const Db = require('./db');
-
+const Formula = require('./formula');
 
 class Effect {
   constructor(data, caster) {
@@ -16,7 +16,7 @@ class Effect {
   }
   
   applyEffect_1(target) {
-    let 
+    let value = Formula
     target.removeHp(value)
   }
 }
