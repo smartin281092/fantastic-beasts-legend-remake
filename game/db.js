@@ -5,7 +5,6 @@ const path = require('path');
 class Db {
   constructor() {}
   
-  // On va récupérer les données du joueur dans la table players.json  
   static getElementById(id, table) {    
     try {
       const jsonPath = path.join(__dirname, `./db/${table}.json`);

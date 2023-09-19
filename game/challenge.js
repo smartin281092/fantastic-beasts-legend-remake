@@ -10,8 +10,6 @@ class Challenge {
     for(let playerId of data.players) {
       players[playerId] = new Player(playerId);
     }
-    
-    console.log(players);
   }
 
 }
