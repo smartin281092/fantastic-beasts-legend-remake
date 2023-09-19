@@ -1,4 +1,5 @@
 const Db = require('./db');
+const Skill = require('./skill');
 
 
 class Beast {
@@ -7,8 +8,9 @@ class Beast {
     
     let skills = {};
     
-    
-    console.log(data);
+    for(let skillId of data.skills) {
+      skills[skillId] = new Skill(skillId);
+    }
   }
   
   getId() {
