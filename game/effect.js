@@ -16,7 +16,8 @@ class Effect {
   }
   
   applyEffect_1(target) {
-    target
+    let 
+    target.removeHp(value)
   }
 }
 
