@@ -1,17 +1,16 @@
 const Player = require('./player');
+const Db = require('./db');
 
 
 class Challenge {
-  constructor(data) {
-    this.playersId = data;
-    this.players = {};
+  constructor(id) {
+    const data = Db.getElementById(id, 'challenges');
+    const players = {};
     
-    this.playersId.forEach((playerId) => {
-      const player = new Player(playerId);
-      this.players[player.getId()] = player;
-    })
-    
-    console.log(this.players);
+    for(let player of data.players) {
+      
+    }
+    console.log(data);
   }
 
 }

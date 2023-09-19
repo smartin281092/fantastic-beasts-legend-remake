@@ -1,16 +1,13 @@
 const fs = require('fs');
 const Db = require('./game/db');
-const Challenge = require('./game/')
+const Challenge = require('./game/challenge');
 
 function createParty() {
-  const challengeData = Db.getElementById('1', 'challenges');
-    
-  console.log(challengeData);
+  let challenge = new Challenge('1');
   
-  return challengeData;
+  return challenge;
 }
 
-// Example usage:
 const party = createParty();
 
 const Timeline = require('./game/timeline');
