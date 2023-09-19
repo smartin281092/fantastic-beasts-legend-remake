@@ -16,7 +16,9 @@ class Effect {
   }
   
   applyEffect_1(target) {
-    let value = Formula
+    let value = this.caster.getAtk() * this.data.pAtk;
+    value = Formula.calculDamage(value, this.caster, target);
+    
     target.removeHp(value)
   }
 }

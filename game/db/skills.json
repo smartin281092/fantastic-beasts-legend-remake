@@ -8,7 +8,7 @@
         "effects": [
           {
             "id": "1",
-            "perAtk": 100
+            "pAtk": 100
           }
         ]
       }
