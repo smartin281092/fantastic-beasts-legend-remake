@@ -1,4 +1,6 @@
 const Db = require('./db');
+const Store = require('./store');
+
 const Beast = require('./beast');
 
 
@@ -7,11 +9,14 @@ class Player {
     this.data = Db.getElementById(id, 'players');
 
     this.opponent;
-    this.beasts = [];
+    this.aliveBeasts = [];
+    this.deadBeasts = [];
     
     for(let beast of this.data.beasts) {
-      this.beasts.push(new Beast(beast, this));
+      this.aliveBeasts.push(new Beast(beast, this));
     }
+    
+    Store.subscribe('beast/is_dead', this);
   }
   
   setOpponent(opponent) {
