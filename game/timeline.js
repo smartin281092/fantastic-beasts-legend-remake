@@ -57,6 +57,7 @@ class Timeline {
     this.timer += this.activeBeast.getSeconds();
     this.activeBeast.resetSeconds();
     this.activeBeast.play();
+    console.log()
   }
   
   removeBeast(beast) {

@@ -10,22 +10,15 @@ class Skill {
     this.data = Db.getElementById(id, 'skills');
     
     this.caster = caster;
-    
-    this.effects = [];
-    
-    for(let effectId of this.data.effects) {
-      this.effects[effectId] = new Effect(effectId);
-    }
   }
   
   reducer(event, payload) {
     
   }
   
-  play(challenge) {
-    let target = challenge;
-    for(let effect in this.effects) {
-      effect.applyEffect(target);
+  play(target) {
+    for(let effectId in this.effects) {
+      new Effect(effectId, this, target);
     }
     
     if(this.data.active) {

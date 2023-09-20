@@ -34,6 +34,10 @@ class Beast {
     this.seconds = 0;
   }
   
+  setSeconds(value) {
+    this.seconds = value;
+  }
+  
   removeHp(value) {
     if(this.getHp() > 0) this.hp -= value;
     console.log(`${this.data.name} lose ${value} HP! HP : ${this.hp}`);
