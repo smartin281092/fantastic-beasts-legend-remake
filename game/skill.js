@@ -16,9 +16,9 @@ class Skill {
     
   }
   
-  play(target) {
+  play() {
     for(let effectId in this.effects) {
-      new Effect(effectId, this, target);
+      new Effect(effectId, this);
     }
     
     if(this.data.active) {

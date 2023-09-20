@@ -8,6 +8,9 @@ class Challenge {
     this.playerA = new Player(playerA);
     this.playerB = new Player(playerB);
     
+    this.playerA.setOpponent(this.playerB);
+    this.playerB.setOpponent(this.playerA);
+    
     this.timeline;
   }
   

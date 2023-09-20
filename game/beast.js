@@ -27,6 +27,7 @@ class Beast {
   }
   
   play() {
+    console.log('Cast skill!');
     this.skills[0].play();
   }
   
@@ -71,6 +72,10 @@ class Beast {
   
   getSeconds() {
     return this.seconds;
+  }
+  
+  getPlayer() {
+    return this.player;
   }
   
   getId() {

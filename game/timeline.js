@@ -10,14 +10,15 @@ class Timeline {
     this.roster = [];
     this.deadList = [];
     this.activeBeast;
-    
-    for(let beastId in challenge.playerA.beasts) {
-      this.roster.push(challenge.playerA.beasts[beastId]);
+        
+    for(let beast of challenge.playerA.beasts) {
+      this.roster.push(beast);
     }
         
-    for(let beastId in challenge.playerB.beasts) {
-      this.roster.push(challenge.playerB.beasts[beastId]);
+    for(let beast of challenge.playerB.beasts) {
+      this.roster.push(beast);
     }
+    
     
     this.sort();
     this.next();
@@ -57,7 +58,6 @@ class Timeline {
     this.timer += this.activeBeast.getSeconds();
     this.activeBeast.resetSeconds();
     this.activeBeast.play();
-    console.log()
   }
   
   removeBeast(beast) {
