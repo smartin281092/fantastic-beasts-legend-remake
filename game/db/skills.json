@@ -5,6 +5,7 @@
         "name": "Normal Attack",
         "type": "normal",
         "active": true,
+        "seconds": 100,
         "effects": [
           {
             "id": "1",

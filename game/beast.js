@@ -14,12 +14,16 @@ class Beast {
     this.hp = this.data.hp + this.beastData.hp;
     this.speed = this.data.speed + this.beastData.speed;
     this.summoningSpeed = Formula.summoningSpeed(this);
-    this.second = this.summoningSpeed;
+    this.seconds = this.summoningSpeed;
     
     this.skills = {};
     for(let skillId of this.beastData.skills) {
       this.skills[skillId] = new Skill(skillId, this);
     }
+  }
+  
+  resetSeconds() {
+    this.seconds = 0;
   }
   
   removeHp(value) {
@@ -47,8 +51,8 @@ class Beast {
     return this.speed;
   }
   
-  getSecond() {
-    return this.second;
+  getSeconds() {
+    return this.seconds;
   }
   
   getId() {

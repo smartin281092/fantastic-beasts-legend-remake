@@ -6,6 +6,7 @@ class Skill {
   constructor(id, caster) {
     this.id = id;
     this.data = Db.getElementById(id, 'skills');
+    this.seconds = this.calcSeconds();
     
     this.caster = caster;
     
@@ -21,6 +22,10 @@ class Skill {
     for(let effect in this.effects) {
       effect.applyEffect(target);
     }
+  }
+  
+  calcSeconds() {
+    return this.data.seconds *
   }
   
   getId() {

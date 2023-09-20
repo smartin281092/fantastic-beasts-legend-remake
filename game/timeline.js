@@ -19,18 +19,21 @@ class Timeline {
   
   sort() {
     this.roster.sort((beastA, beastB) => {
-      return beastA.getSecond() - beastB.getSecond();
+      return beastA.getSeconds() - beastB.getSeconds();
     });
-    console.log('Roster ordered list : ', this.roster[0].getSecond(), this.roster[1].getSecond());
+    
+    console.log('Roster ordered list : ', this.roster[0].getSeconds(), this.roster[1].getSeconds());
   }
   
   next() {
     if(this.activeBeast) {
       this.roster.push(this.activeBeast);
-      this.sort
+      this.sort();
     }
     
     this.activeBeast = this.roster.shift();
+    this.timer += this.activeBeast.getSeconds();
+    this.activeBeast.resetSeconds();
   }
 }
 
