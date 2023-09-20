@@ -7,6 +7,7 @@ class Timeline {
     this.timer = 0;
     
     this.roster = [];
+    this
     this.activeBeast;
     
     for(let beastId in challenge.playerA.beasts) {
@@ -57,8 +58,23 @@ class Timeline {
   }
   
   removeBeast(beast) {
+    for (let i = 0; i < this.roster.length; i++) {
+      if (this.roster[i] === beast) {
+        this.roster.splice(i, 1);
+        
+        if(this.roster.length == 0) {
+          Store.dispatch('game/gameover', this.activeBeast);
+          console.log('Battle finish!')
+        }
+
+        break;
+      }
+    }
+
     if(this.activeBeast == beast) {
-      
+      if(this.roster.length >1) {
+        
+      }
     }
   }
 }
