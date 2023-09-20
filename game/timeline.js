@@ -22,7 +22,7 @@ class Timeline {
   
   reducer(event, payload) {
     switch(event) {
-      case `timeline/action`:
+      case `skill/active_casted`:
         this.next(payload);
         break;
       default:
@@ -47,6 +47,7 @@ class Timeline {
     this.activeBeast = this.roster.shift();
     this.timer += this.activeBeast.getSeconds();
     this.activeBeast.resetSeconds();
+    this.activeBeast.play();
   }
 }
 

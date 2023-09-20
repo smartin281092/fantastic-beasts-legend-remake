@@ -19,10 +19,14 @@ class Beast {
     this.summoningSpeed = Formula.summoningSpeed(this);
     this.seconds = this.summoningSpeed;
     
-    this.skills = {};
-    for(let skillId of this.beastData.skills) {
-      this.skills[skillId] = new Skill(skillId, this);
+    this.skills = [];
+    for(let i = 0; i < this.beastData.skills.length; i++) {
+      this.skills.push(new Skill(this.beastData.skills[i], this));
     }
+  }
+  
+  play() {
+    this.skills[0]
   }
   
   resetSeconds() {
