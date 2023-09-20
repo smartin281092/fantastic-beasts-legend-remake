@@ -5,9 +5,10 @@ class Timeline {
   constructor(challenge) {
     this.challenge = challenge;
     this.timer = 0;
+    this.gameover = false;
     
     this.roster = [];
-    this
+    this.deadList = [];
     this.activeBeast;
     
     for(let beastId in challenge.playerA.beasts) {
@@ -19,6 +20,7 @@ class Timeline {
     }
     
     this.sort();
+    this.next();
     
     Store.subscribe('skill/active_casted', this);
     Store.subscribe('beast/is_dead', this);
@@ -41,11 +43,11 @@ class Timeline {
     this.roster.sort((beastA, beastB) => {
       return beastA.getSeconds() - beastB.getSeconds();
     });
-    
-    console.log('Roster ordered list : ', this.roster[0].getSeconds(), this.roster[1].getSeconds());
   }
   
   next() {
+    if(this.gameover) return;
+    
     if(this.activeBeast) {
       this.roster.push(this.activeBeast);
       this.sort();
@@ -58,12 +60,14 @@ class Timeline {
   }
   
   removeBeast(beast) {
+    this.deadList.push(beast);
+
     for (let i = 0; i < this.roster.length; i++) {
       if (this.roster[i] === beast) {
         this.roster.splice(i, 1);
         
         if(this.roster.length == 0) {
-          Store.dispatch('game/gameover', this.activeBeast);
+          this.gameover = true;
           console.log('Battle finish!')
         }
 
@@ -72,8 +76,12 @@ class Timeline {
     }
 
     if(this.activeBeast == beast) {
-      if(this.roster.length >1) {
-        
+      if(this.roster.length > 1) {
+        this.activeBeast = null;
+        this.next();
+      } else {
+        this.gameover = true;
+        console.log('Battle finish!')
       }
     }
   }

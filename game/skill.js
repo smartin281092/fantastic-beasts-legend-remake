@@ -11,7 +11,7 @@ class Skill {
     
     this.caster = caster;
     
-    this.effects = {};
+    this.effects = [];
     
     for(let effectId of this.data.effects) {
       this.effects[effectId] = new Effect(effectId);
