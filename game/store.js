@@ -1,8 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit'
-import timelineReducer from './timelineReducer'
-
-export default configureStore({
-  reducer: {
-    counter: timelineReducer
+class Store {
+  constructor() {
+    Store.observers = [];
   }
-})
+  
+  
+  static subscribe(event, object) {
+    
+  }
+
+}
+
+module.exports = Store;
