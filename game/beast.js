@@ -1,6 +1,8 @@
 const Db = require('./db');
 const Skill = require('./skill');
 const Formula = require('./formula');
+const Store = require('./store');
+
 
 
 class Beast {
