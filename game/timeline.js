@@ -1,3 +1,6 @@
+const Store = require('./store');
+
+
 class Timeline {
   constructor(challenge) {
     this.challenge = challenge;
@@ -15,6 +18,13 @@ class Timeline {
     }
     
     this.sort();
+  }
+  
+  reducer(event, payload) {
+    switch(event) {
+      case `timeline/action`:
+        this.next(payload)
+    }
   }
   
   sort() {
