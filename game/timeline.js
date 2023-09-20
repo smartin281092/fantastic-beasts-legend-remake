@@ -23,7 +23,10 @@ class Timeline {
   reducer(event, payload) {
     switch(event) {
       case `timeline/action`:
-        this.next(payload)
+        this.next(payload);
+        break;
+      default:
+        console.log('No reducer function found.')
     }
   }
   
