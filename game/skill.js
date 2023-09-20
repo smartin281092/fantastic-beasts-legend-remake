@@ -1,4 +1,6 @@
 const Db = require('./db');
+const Store = require('./store');
+
 const Effect = require('./effect');
 
 
@@ -16,13 +18,20 @@ class Skill {
     }
   }
   
+  reducer(event, payload) {
+    
+  }
+  
   play(challenge) {
     let target = challenge;
     for(let effect in this.effects) {
       effect.applyEffect(target);
     }
     
-    this.caster.setSeconds(this.calcSeconds);
+    if(this.data.active) {
+      this.caster.setSeconds(this.calcSeconds);
+      Store.dispatch('skill/active_casted', this.caster);
+    }
   }
   
   calcSeconds() {

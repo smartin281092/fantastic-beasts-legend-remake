@@ -1,7 +1,8 @@
 const Db = require('./db');
+const Store = require('./store');
+
 const Skill = require('./skill');
 const Formula = require('./formula');
-const Store = require('./store');
 
 
 
