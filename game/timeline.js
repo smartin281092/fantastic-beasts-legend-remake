@@ -18,12 +18,18 @@ class Timeline {
     }
     
     this.sort();
+    
+    Store.subscribe('skill/active_casted', this);
+    Store.subscribe('beast/is_dead', this);
   }
   
   reducer(event, payload) {
     switch(event) {
       case `skill/active_casted`:
         this.next(payload);
+        break;
+      case `beast/is_dead`:
+        this.removeBeast(payload);
         break;
       default:
         console.log('No reducer function found.')
@@ -48,6 +54,12 @@ class Timeline {
     this.timer += this.activeBeast.getSeconds();
     this.activeBeast.resetSeconds();
     this.activeBeast.play();
+  }
+  
+  removeBeast(beast) {
+    if(this.activeBeast == beast) {
+      
+    }
   }
 }
 

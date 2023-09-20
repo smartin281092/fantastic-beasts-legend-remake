@@ -16,7 +16,7 @@ const Store = {
     if (eventObservers) {
       // Notify all observers for the specified event
       eventObservers.forEach((observer) => {
-        observer(event, data);
+        observer.reducer(event, data);
       });
     }
   },

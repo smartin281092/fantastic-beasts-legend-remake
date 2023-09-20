@@ -11,6 +11,7 @@ class Beast {
     this.data = data;
     this.player = player;
     this.beastData = Db.getElementById(this.data.classId, 'beasts');
+    this.isAlive = true;
     
     this.atk = this.data.atk + this.beastData.atk;
     this.def = this.data.def + this.beastData.def;
@@ -26,7 +27,7 @@ class Beast {
   }
   
   play() {
-    this.skills[0]
+    this.skills[0].play();
   }
   
   resetSeconds() {
@@ -38,8 +39,14 @@ class Beast {
     console.log(`${this.data.name} lose ${value} HP! HP : ${this.hp}`);
     
     if(this.hp <= 0) {
-      console.log(`${this.beastData.name} from ${this.player.getPseudo()} is dead!`)
+      this.isDead();
     }
+  }
+  
+  isDead() {
+    this.isAlive = false;
+    Store.dispatch('beast/is_dead', this);
+    console.log(`${this.beastData.name} from ${this.player.getPseudo()} is dead!`)
   }
   
   getAtk() {
