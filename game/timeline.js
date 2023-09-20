@@ -17,6 +17,7 @@ class Timeline {
   }
   
   sort() {
+    console.log('timeline roster : ', this.roster)
     this.roster.sort((beastA, beastB) => {
       console.log('timeline check : ', beastA)
       beastB.getSecond() - beastA.getSecond();
