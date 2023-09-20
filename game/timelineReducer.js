@@ -1,20 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const timelineReducer = createSlice({
+  name: 'timeline',
   initialState: {
-    value: 0
+    challenge: '',
+    timer: 0,
+    roster: [],
+    activeBeast: '',
   },
   reducers: {
-    increment: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
+    setChallenge: (state, action) => {
+      state.challenge = action.payload; 
     },
-    decrement: state => {
-      state.value -= 1
+    addBeast: (state, action) => {
+      state.roster.push(action.payload);
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload
