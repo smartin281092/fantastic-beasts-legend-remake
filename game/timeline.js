@@ -5,24 +5,22 @@ class Timeline {
     
     this.roster = [];
     
-    for(let beast in challenge.playerA.beasts) {
-      this.roster.push(beast);
+    for(let beastId in challenge.playerA.beasts) {
+      this.roster.push(challenge.playerA.beasts[beastId]);
     }
         
-    for(let beast in challenge.playerB.beasts) {
-      this.roster.push(beast);
+    for(let beastId in challenge.playerB.beasts) {
+      this.roster.push(challenge.playerB.beasts[beastId]);
     }
     
     this.sort();
   }
   
   sort() {
-    console.log('timeline roster : ', this.roster)
     this.roster.sort((beastA, beastB) => {
-      console.log('timeline check : ', beastA)
-      beastB.getSecond() - beastA.getSecond();
+      return beastA.getSecond() - beastB.getSecond();
     })
-    console.log('Roster ordered list : ', this.roster)
+    console.log('Roster ordered list : ', this.roster[0].getSecond(), this.roster[1].getSecond());
   }
 }
 
