@@ -11,11 +11,11 @@ class Timeline {
     this.deadList = [];
     this.activeBeast;
         
-    for(let beast of challenge.playerA.beasts) {
+    for(let beast of challenge.playerA.aliveBeasts) {
       this.roster.push(beast);
     }
         
-    for(let beast of challenge.playerB.beasts) {
+    for(let beast of challenge.playerB.aliveBeasts) {
       this.roster.push(beast);
     }
     

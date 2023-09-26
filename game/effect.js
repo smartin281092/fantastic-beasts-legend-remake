@@ -5,6 +5,8 @@ class Effect {
   constructor(data, caster) {
     this.data = data;
     this.caster = caster;
+    
+    this.applyEffect
   }
   
   applyEffect() {
