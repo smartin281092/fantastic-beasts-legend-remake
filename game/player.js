@@ -33,8 +33,33 @@ class Player {
     return this.getBeastWithHighestHealth();
   }
   
-  getBeastWithHighestHealth() {}
-  getBeastWithLowestHealth() {}
+  getBeastWithHighestHealth() {
+     if (this.aliveBeasts.length === 0) {
+        return null; // Return null if there are no alive beasts
+      }
+
+      return this.aliveBeasts.reduce((highestHealthBeast, currentBeast) => {
+        // Compare the current beast's health with the highest health found so far
+        if (currentBeast.getHp() > highestHealthBeast.getHp()) {
+          return currentBeast; // Update the highest health beast if needed
+        }
+        return highestHealthBeast; // Otherwise, keep the current highest health beast
+      }, this.aliveBeasts[0]); // Initialize with the first beast as the starting point
+  }
+  
+  getBeastWithLowestHealth() {
+     if (this.aliveBeasts.length === 0) {
+      return null;
+    }
+
+      return this.aliveBeasts.reduce((lowestHealthBeast, currentBeast) => {
+        if (currentBeast.getHp() < lowestHealthBeast.getHp()) {
+          return currentBeast;
+        }
+        return lowestHealthBeast;
+      }, this.aliveBeasts[0]);
+  }
+  
   getBeastWithHighestAtk() {}
   
   setOpponent(opponent) {
