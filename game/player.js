@@ -24,13 +24,16 @@ class Player {
   }
   
   getTankiestBeast() {
-    let beast = this.seachBBeastByRole('tank');
+    let beast = this.seachBeastByRole('tank');
+        
+        this.seachBeastByRole('tank');
     for(let beast of this.data.beasts) {
       this.aliveBeasts.push(new Beast(beast, this));
     }
 
   }
   
+  getBeastWithHighestHealth() 
   getBeastWithLowestHealth() {}
   getBeastWithHighestAtk() {}
   
