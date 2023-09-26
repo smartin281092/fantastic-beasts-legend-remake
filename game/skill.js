@@ -17,7 +17,7 @@ class Skill {
   }
   
   play() {
-    for(let effectId in this.data.effects) {
+    for(let effectId of this.data.effects) {
       new Effect(effectId, this);
     }
     

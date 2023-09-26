@@ -2,18 +2,16 @@ const Db = require('./db');
 const Formula = require('./formula');
 
 class Effect {
-  constructor(id, caster) {
-    this.id = id;
+  constructor(data, caster) {
+    this.data = data;
     this.caster = caster;
-    console.log('test effect')
     
     this.applyEffect();
   }
   
   applyEffect() {
-    console.log('id effect : ', this.id);
-    switch (this.id) {
-      case 1:                          // Normal attack
+    switch (this.data.id) {
+      case "1":                          // Normal attack
         this.applyEffect_1();
         break;
     }
