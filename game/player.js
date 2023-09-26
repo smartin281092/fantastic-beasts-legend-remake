@@ -19,6 +19,19 @@ class Player {
     Store.subscribe('beast/is_dead', this);
   }
   
+  searchBeastType
+  
+  getTankiestBeast() {
+    let beast
+    for(let beast of this.data.beasts) {
+      this.aliveBeasts.push(new Beast(beast, this));
+    }
+
+  }
+  
+  getBeastWithLowestHealth() {}
+  getBeastWithHighestAtk() {}
+  
   setOpponent(opponent) {
     this.opponent = opponent;
   }

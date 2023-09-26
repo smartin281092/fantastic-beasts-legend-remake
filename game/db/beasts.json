@@ -4,7 +4,7 @@
         "id": "1",
         "name": "Hou",
         "typeId": "1",
-        "positionId": "1",
+        "role": "warrior",
         "skills": [
           "1"
         ],

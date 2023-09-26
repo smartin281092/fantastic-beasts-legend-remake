@@ -16,7 +16,7 @@ class Effect {
   }
   
   applyEffect_1() {
-    let target = this.caster.getPlayer().getOpponent().beast
+    let target = this.caster.getPlayer().getOpponent().getTankiestBeast();
     let value = this.caster.getAtk() * this.data.pAtk;
     value = Formula.calculDamage(value, this.caster, this.target);
     
