@@ -5,7 +5,7 @@ class Effect {
   constructor(id, caster) {
     this.id = id;
     this.caster = caster;
-    
+    console.log('test effect')
     
     this.applyEffect();
   }
