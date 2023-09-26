@@ -19,21 +19,21 @@ class Player {
     Store.subscribe('beast/is_dead', this);
   }
   
-  searchBeastByRole(role) {
-    
+  searchBeastByRole(role) {    
+    for(let beast of this.aliveBeasts) {
+      if (beast.getRole() == role) return beast
+    }
   }
   
   getTankiestBeast() {
     let beast = this.seachBeastByRole('tank');
         
         this.seachBeastByRole('tank');
-    for(let beast of this.data.beasts) {
-      this.aliveBeasts.push(new Beast(beast, this));
-    }
+    
 
   }
   
-  getBeastWithHighestHealth() 
+  getBeastWithHighestHealth() {}
   getBeastWithLowestHealth() {}
   getBeastWithHighestAtk() {}
   
