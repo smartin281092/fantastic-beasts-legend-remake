@@ -20,17 +20,17 @@ class Player {
   }
   
   searchBeastByRole(role) {    
-    for(let beast of this.aliveBeasts) {
-      if (beast.getRole() == role) return beast
-    }
+    return this.aliveBeasts.find(beast => beast.getRole() === role) || null;
   }
   
   getTankiestBeast() {
-    let beast = this.seachBeastByRole('tank');
-        
-        this.seachBeastByRole('tank');
-    
+    const tankBeast = this.searchBeastByRole('tank');
+    if (tankBeast) {
+      return tankBeast;
+    }
 
+    // If there is no 'tank' role, get the beast with the highest health
+    return this.getBeastWithHighestHealth();
   }
   
   getBeastWithHighestHealth() {}
