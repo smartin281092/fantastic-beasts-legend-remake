@@ -19,10 +19,12 @@ class Player {
     Store.subscribe('beast/is_dead', this);
   }
   
-  searchBeastType
+  searchBeastByRole(role) {
+    
+  }
   
   getTankiestBeast() {
-    let beast
+    let beast = this.seachBBeastByRole('tank');
     for(let beast of this.data.beasts) {
       this.aliveBeasts.push(new Beast(beast, this));
     }
