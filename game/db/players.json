@@ -2,7 +2,7 @@
   "players": [
     {
       "id": "1",
-      "Pseudo": "Prime",
+      "pseudo": "Prime",
       "beasts": [
         {
           "id": "1",
@@ -16,7 +16,7 @@
     },
     {
       "id": "2",
-      "Pseudo": "Fancy",
+      "pseudo": "Fancy",
       "beasts": [
         {
           "id": "1",
