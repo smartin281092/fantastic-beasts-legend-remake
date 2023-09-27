@@ -12,8 +12,18 @@ class Formula {
     return num;
   }
   
-  static calculDamage(value, caster, target) {
-    let num = Math.ceil(value * this.calculRes(target));
+  static calculDamage(value, caster, target, canCrit) {
+    let critMultiplier = 1;
+    
+    if(canCrit) {
+      const randomCrit = Math.random();
+      
+      if(randomCrit <= caster.getCC()) {
+        critMultiplier = 1.5;
+      }
+    }
+
+    let num = Math.ceil((value * this.calculRes(target)) * critMultiplier);
     
     return num;
   }

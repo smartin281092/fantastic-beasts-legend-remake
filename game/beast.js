@@ -85,6 +85,10 @@ class Beast {
     return this.beastData.name;
   }
   
+  getCC() {
+    return this.data.cc;
+  }
+  
   getId() {
     return this.data.id;
   }
