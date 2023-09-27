@@ -2,9 +2,9 @@ const Db = require('./db');
 const Formula = require('./formula');
 
 class Effect {
-  constructor(data, caster) {
+  constructor(data, skill) {
     this.data = data;
-    this.caster = caster;
+    this.skill = skill;
     
     this.applyEffect();
   }
@@ -18,9 +18,9 @@ class Effect {
   }
   
   applyEffect_1() {
-    let target = this.caster.getPlayer().getOpponent().getTankiestBeast();
-    let value = this.caster.getAtk() * this.data.pAtk;
-    value = Formula.calculDamage(value, this.caster, this.target);
+    let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
+    let value = this.skill.caster.getAtk() * this.data.pAtk;
+    value = Formula.calculDamage(value, this.skill.caster, target);
     
     this.target.removeHp(value)
   }

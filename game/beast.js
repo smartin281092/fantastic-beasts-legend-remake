@@ -78,6 +78,10 @@ class Beast {
     return this.player;
   }
   
+  getRole() {
+    return this.role;
+  }
+  
   getId() {
     return this.data.id;
   }
