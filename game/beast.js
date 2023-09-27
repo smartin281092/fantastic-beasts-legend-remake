@@ -53,6 +53,14 @@ class Beast {
     console.log(`${this.beastData.name} from ${this.player.getPseudo()} is dead!`)
   }
   
+  getHit() {
+    return this.data.hit;
+  }
+  
+  getDodge() {
+    return this.data.dod;
+  }
+  
   getAtk() {
     return this.atk;
   }

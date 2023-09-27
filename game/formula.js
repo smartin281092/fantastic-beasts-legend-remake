@@ -16,6 +16,7 @@ class Formula {
     let critMultiplier = 1;
     
     if((Math.random() + caster.getHit()) <= target.getDodge() && isDodgeable) {
+      console.log('Dodged!')
       return 0;
     }
     
