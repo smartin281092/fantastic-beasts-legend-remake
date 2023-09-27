@@ -2,7 +2,6 @@ const Store = {
   observers: {},
 
   subscribe(event, observer) {
-    console.log(event)
     // Initialize the array for this event if it doesn't exist yet
     if (!Store.observers[event]) {
       Store.observers[event] = [];
