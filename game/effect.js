@@ -19,10 +19,11 @@ class Effect {
   
   applyEffect_1() {
     let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
-    let value = this.skill.caster.getAtk() * this.data.pAtk;
-    value = Formula.calculDamage(value, this.skill.caster, target);
+    let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;
     
-    this.target.removeHp(value)
+    let dmg = Formula.calculDamage(value, this.skill.caster, target);
+    
+    target.removeHp(dmg)
   }
 }
 

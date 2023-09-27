@@ -47,6 +47,7 @@ class Timeline {
   }
   
   next() {
+    console.log('skill active casted!')
     if(this.gameover) return;
     
     if(this.activeBeast) {

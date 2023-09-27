@@ -27,7 +27,6 @@ class Beast {
   }
   
   play() {
-    console.log('Cast skill!');
     this.skills[0].play();
   }
   

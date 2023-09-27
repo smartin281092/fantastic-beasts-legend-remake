@@ -17,6 +17,9 @@ class Skill {
   }
   
   play() {
+    console.log(this.caster)
+    console.log(`${this.caster.getName} from ${this.caster.getPlayer().getPseudo()} casts ${this.data.name}!`);
+
     for(let effectId of this.data.effects) {
       new Effect(effectId, this);
     }
