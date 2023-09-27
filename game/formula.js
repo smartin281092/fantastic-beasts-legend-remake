@@ -15,9 +15,8 @@ class Formula {
   static calculDamage(value, caster, target, canCrit, isDodgeable = true) {
     let critMultiplier = 1;
     
-    if(!isDodgeable) {
-      continue
-      
+    if((Math.random() + caster.getHit()) <= target.getDodge() && isDodgeable) {
+      return 0;
     }
     
     if(canCrit) {
