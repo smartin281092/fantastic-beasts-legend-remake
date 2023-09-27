@@ -23,6 +23,8 @@ class Timeline {
     Store.subscribe('beast/is_dead', this);
 
     this.sort();
+    
+    // next() will initiate the fight and will not stop until the battle is over.
     this.next();
   }
   
