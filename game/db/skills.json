@@ -9,7 +9,8 @@
         "effects": [
           {
             "id": "1",
-            "pAtk": 100
+            "pAtk": 100,
+            "isDodgeable": true
           }
         ]
       }

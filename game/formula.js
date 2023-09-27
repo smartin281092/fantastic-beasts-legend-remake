@@ -15,6 +15,8 @@ class Formula {
   static calculDamage(value, caster, target, canCrit, isDodgeable) {
     let critMultiplier = 1;
     
+    if()
+    
     if(canCrit) {
       const randomCrit = Math.random();
       

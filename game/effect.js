@@ -22,7 +22,7 @@ class Effect {
     
     let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;
         
-    let dmg = Formula.calculDamage(value, this.skill.caster, target, true);
+    let dmg = Formula.calculDamage(value, this.skill.caster, target, true, this.data.isDodgeable);
     
     target.removeHp(dmg)
   }
