@@ -19,7 +19,10 @@ class Effect {
   
   applyEffect_1() {
     let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
+    
     let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;
+    
+    Formula.calculDodge()
     
     let dmg = Formula.calculDamage(value, this.skill.caster, target);
     
