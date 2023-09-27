@@ -19,12 +19,11 @@ class Timeline {
       this.roster.push(beast);
     }
     
-    
-    this.sort();
-    this.next();
-    
     Store.subscribe('skill/active_casted', this);
     Store.subscribe('beast/is_dead', this);
+
+    this.sort();
+    this.next();
   }
   
   reducer(event, payload) {
