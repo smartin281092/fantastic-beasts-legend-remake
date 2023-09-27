@@ -30,7 +30,14 @@ class Player {
   }
   
   removeBeast(beast) {
-    
+    this.deadBeasts.push(beast);
+
+    for (let i = 0; i < this.aliveBeasts.length; i++) {
+      if (this.aliveBeasts[i] === beast) {
+        this.aliveBeasts.splice(i, 1);
+        break;
+      }
+    }
   }
   
   searchBeastByRole(role) {    

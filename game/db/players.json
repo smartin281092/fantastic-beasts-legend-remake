@@ -24,10 +24,11 @@
           "classId": "1",
           "typeId": "1",
           "positionId": "1",
-          "hp": 300,
-          "def": 15,
-          "atk": 30,
-          "speed": 8
+          "hp": 310,
+          "def": 10,
+          "atk": 100,
+          "speed": 8,
+          "cc": 0
         }
       ]
     }
