@@ -13,7 +13,7 @@ class Formula {
   }
   
   static calculDamage(value, caster, target) {
-    let num = Math.ceil(this.calculRandomizedBaseDamage(value) * this.calculRes(target));
+    let num = Math.ceil(value * this.calculRes(target));
     
     return num;
   }
