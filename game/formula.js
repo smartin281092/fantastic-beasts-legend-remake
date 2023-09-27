@@ -12,10 +12,13 @@ class Formula {
     return num;
   }
   
-  static calculDamage(value, caster, target, canCrit, isDodgeable) {
+  static calculDamage(value, caster, target, canCrit, isDodgeable = true) {
     let critMultiplier = 1;
     
-    if()
+    if(!isDodgeable) {
+      continue
+      
+    }
     
     if(canCrit) {
       const randomCrit = Math.random();
