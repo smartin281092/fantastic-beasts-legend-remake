@@ -12,12 +12,15 @@ const Store = {
 
   dispatch(event, data) {
     const eventObservers = Store.observers[event];
+    console.log(Store.observers)
 
     if (eventObservers) {
       // Notify all observers for the specified event
       eventObservers.forEach((observer) => {
         observer.reducer(event, data);
       });
+    } else {
+      console.log('No observer for : ', event, eventObservers)
     }
   },
 };

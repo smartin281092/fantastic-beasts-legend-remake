@@ -40,7 +40,7 @@ class Beast {
   
   removeHp(value) {
     if(this.getHp() > 0) this.hp -= value;
-    console.log(`${this.data.name} lose ${value} HP! HP : ${this.hp}`);
+    console.log(`${this.getName()} loses ${value} HP! Remaining HP : ${this.hp}`);
     
     if(this.hp <= 0) {
       this.isDead();

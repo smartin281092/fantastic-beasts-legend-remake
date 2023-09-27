@@ -15,7 +15,6 @@ class Formula {
   static calculDamage(value, caster, target) {
     let num = Math.ceil(value * this.calculRes(target));
     
-    console.log('calculated damage : ', num);
     return num;
   }
   
