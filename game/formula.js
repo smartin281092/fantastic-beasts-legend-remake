@@ -12,7 +12,7 @@ class Formula {
     return num;
   }
   
-  static calculDamage(value, caster, target, canCrit) {
+  static calculDamage(value, caster, target, canCrit, isDodgeable) {
     let critMultiplier = 1;
     
     if(canCrit) {
