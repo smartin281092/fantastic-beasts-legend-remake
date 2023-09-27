@@ -19,6 +19,20 @@ class Player {
     Store.subscribe('beast/is_dead', this);
   }
   
+  reducer(event, payload) {
+    switch(event) {
+      case `beast/is_dead`:
+        this.removeBeast(payload);
+        break;
+      default:
+        console.log('No reducer function found.')
+    }
+  }
+  
+  removeBeast(beast) {
+    
+  }
+  
   searchBeastByRole(role) {    
     return this.aliveBeasts.find(beast => beast.getRole() === role) || null;
   }

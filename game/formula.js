@@ -19,6 +19,7 @@ class Formula {
       const randomCrit = Math.random();
       
       if(randomCrit <= caster.getCC()) {
+        console.log('Critical Hit!')
         critMultiplier = 1.5;
       }
     }

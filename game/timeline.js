@@ -29,7 +29,6 @@ class Timeline {
   }
   
   reducer(event, payload) {
-    console.log('test reducer')
     switch(event) {
       case `skill/active_casted`:
         this.next(payload);
