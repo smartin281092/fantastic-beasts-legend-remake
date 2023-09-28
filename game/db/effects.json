@@ -1,0 +1,15 @@
+{
+  "effects": [
+    {
+      "id": "1",
+      "pAtk": 100,
+      "isDodgeable": true
+    },
+    {
+      "id": "2",
+      "pAtk": 181,
+      "isDodgeable": true,
+      "comboEffectId": 1 
+    }
+  ]
+}

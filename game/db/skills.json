@@ -6,27 +6,28 @@
         "type": "normal",
         "active": true,
         "seconds": 100,
+        "cd": 0,
         "effects": [
           {
             "id": "1",
             "pAtk": 100,
-            "cd": 0,
             "isDodgeable": true
           }
         ]
       },
-          {
-        "id": "1",
-        "name": "Normal Attack",
-        "type": "normal",
+      {
+        "id": "2",
+        "name": "Fiery Lava",
+        "type": "skill",
         "active": true,
-        "seconds": 100,
+        "seconds": 200,
+        "cd": 400,
         "effects": [
           {
-            "id": "1",
-            "pAtk": 100,
-            "cd": 0,
-            "isDodgeable": true
+            "id": "2",
+            "pAtk": 181,
+            "isDodgeable": true,
+            "comboEffectId": 1 
           }
         ]
       }
