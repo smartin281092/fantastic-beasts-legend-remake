@@ -6,7 +6,10 @@
         "typeId": "1",
         "role": "warrior",
         "skills": [
-          "1"
+          {
+            "id": "1",
+            "priority": 10
+          }
         ],
         "hp": 1234,
         "def": 28,

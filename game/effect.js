@@ -1,5 +1,7 @@
 const Db = require('./db');
 const Formula = require('./formula');
+const Store = require('./store');
+
 
 class Effect {
   constructor(data, skill) {
@@ -14,6 +16,9 @@ class Effect {
       case "1":                          // Normal attack
         this.applyEffect_1();
         break;
+      case "2":
+        this.applyEffect_2();
+        break;
     }
   }
   
@@ -24,6 +29,16 @@ class Effect {
     let dmg = Formula.calculDamage(value, this.skill.caster, target, true, this.data.isDodgeable);
     
     target.removeHp(dmg)
+  }
+  
+  applyEffect_2(notified = false) {
+    if(notified) {
+      
+    } else {
+      Store.subscribe(`skill/cc`);
+      
+      
+    }
   }
 }
 

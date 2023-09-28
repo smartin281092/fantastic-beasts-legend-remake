@@ -22,7 +22,7 @@ class Beast {
     
     this.skills = [];
     for(let i = 0; i < this.beastData.skills.length; i++) {
-      this.skills.push(new Skill(this.beastData.skills[i], this));
+      this.skills.push(new Skill(this.beastData.skills[i].id, this));
     }
   }
   
