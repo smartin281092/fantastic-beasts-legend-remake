@@ -1,4 +1,9 @@
 const Store = {
+  // Unique Battle ID
+  ubid: 0,
+  // Unique Effect ID : to identify each effect casts
+  ueid: 0,
+  battles : [],
   observers: {},
 
   subscribe(event, observer) {
