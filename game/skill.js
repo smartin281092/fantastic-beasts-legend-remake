@@ -20,7 +20,9 @@ class Skill {
     console.log(`${this.caster.getName()} from ${this.caster.getPlayer().getPseudo()} casts ${this.data.name}!`);
 
     for(let effectId of this.data.effects) {
-      new Effect(effectId, this);
+      let effect = Db.getElementById(effectId, 'effects');
+      
+      new Effect(effect, this);
     }
     
     if(this.data.active) {

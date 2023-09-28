@@ -16,7 +16,7 @@ class Player {
       this.aliveBeasts.push(new Beast(beast, this));
     }
     
-    Store.subscribe('beast/is_dead', this);
+    Store.subscribe('beast/is_dead', this.reducer.bind(this));
   }
   
   reducer(event, payload) {

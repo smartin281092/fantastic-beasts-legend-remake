@@ -7,13 +7,7 @@
         "active": true,
         "seconds": 100,
         "cd": 0,
-        "effects": [
-          {
-            "id": "1",
-            "pAtk": 100,
-            "isDodgeable": true
-          }
-        ]
+        "effects": ["1"]
       },
       {
         "id": "2",
@@ -22,14 +16,8 @@
         "active": true,
         "seconds": 200,
         "cd": 400,
-        "effects": [
-          {
-            "id": "2",
-            "pAtk": 181,
-            "isDodgeable": true,
-            "comboEffectId": 1 
-          }
-        ]
+        "cc": 0.3,
+        "effects": ["2"]
       }
 
   ]

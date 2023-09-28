@@ -19,8 +19,8 @@ class Timeline {
       this.roster.push(beast);
     }
     
-    Store.subscribe('skill/active_casted', this);
-    Store.subscribe('beast/is_dead', this);
+    Store.subscribe('skill/active_casted', this.reducer.bind(this));
+    Store.subscribe('beast/is_dead', this.reducer.bind(this));
 
     this.sort();
     
