@@ -10,9 +10,26 @@
           {
             "id": "1",
             "pAtk": 100,
+            "cd": 0,
+            "isDodgeable": true
+          }
+        ]
+      },
+          {
+        "id": "1",
+        "name": "Normal Attack",
+        "type": "normal",
+        "active": true,
+        "seconds": 100,
+        "effects": [
+          {
+            "id": "1",
+            "pAtk": 100,
+            "cd": 0,
             "isDodgeable": true
           }
         ]
       }
+
   ]
 }
