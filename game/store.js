@@ -3,6 +3,10 @@ const Store = {
   ubid: 0,
   // Unique Effect ID : to identify each effect casts
   ueid: 0,
+  newueid() {
+    Store.ueid++;
+    return Store
+  },
   battles : [],
   observers: {},
 
@@ -27,6 +31,7 @@ const Store = {
       console.log('No observer for : ', event, eventObservers)
     }
   },
+  
 };
 
 module.exports = Store;
