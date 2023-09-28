@@ -7,6 +7,7 @@ class Effect {
   constructor(data, skill) {
     this.data = data;
     this.skill = skill;
+    this.ueid = Store.generateUeid();
     
     this.applyEffect();
   }
@@ -26,7 +27,7 @@ class Effect {
     let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
     
     let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;
-    let dmg = Formula.calculDamage(value, this.skill.caster, target, true, this.data.isDodgeable);
+    let dmg = Formula.calculDamage(value, this.skill.caster, target, this.ueid, true, this.data.isDodgeable);
     
     target.removeHp(dmg)
   }

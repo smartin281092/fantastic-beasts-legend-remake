@@ -12,7 +12,7 @@ class Formula {
     return num;
   }
   
-  static calculDamage(value, caster, target, canCrit, isDodgeable = true) {
+  static calculDamage(value, caster, target, ueid, canCrit = true, isDodgeable = true) {
     let critMultiplier = 1;
     
     if((Math.random() + caster.getHit()) <= target.getDodge() && isDodgeable) {
@@ -24,7 +24,7 @@ class Formula {
       const randomCrit = Math.random();
       
       if(randomCrit <= caster.getCC()) {
-        console.log('Critical Hit!')
+        console.log('Critical Hit!');
         critMultiplier = 1.5;
       }
     }

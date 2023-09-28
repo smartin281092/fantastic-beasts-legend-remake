@@ -3,9 +3,9 @@ const Store = {
   ubid: 0,
   // Unique Effect ID : to identify each effect casts
   ueid: 0,
-  newueid() {
+  generateUeid() {
     Store.ueid++;
-    return Store
+    return Store.ueid;
   },
   battles : [],
   observers: {},
