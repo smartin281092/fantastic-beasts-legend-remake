@@ -34,11 +34,11 @@ class Effect {
   
   applyEffect_2(notified = false) {
     if(notified) {
-      
+      // create new effect id 1 when critical hit notified
     } else {
       Store.subscribe(`skill_${this.ueid}/cc`, this.applyEffect_2.bind(this));
       
-      
+      // apply the attack and include the critical hit chance bonus of the spell
     }
   }
 }
