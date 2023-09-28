@@ -1,3 +1,6 @@
+const Store = require('./store');
+
+
 class Formula {
   constructor(){}
   
@@ -25,6 +28,7 @@ class Formula {
       
       if(randomCrit <= caster.getCC()) {
         console.log('Critical Hit!');
+        Store.dispatch(`skill_${ueid}/cc`, true)
         critMultiplier = 1.5;
       }
     }

@@ -36,7 +36,7 @@ class Effect {
     if(notified) {
       
     } else {
-      Store.subscribe(`skill/cc`);
+      Store.subscribe(`skill_${this.ueid}/cc`, this.applyEffect_2.bind(this));
       
       
     }
