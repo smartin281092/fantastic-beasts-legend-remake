@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -28,7 +29,7 @@ io.on('connection', (socket) => {
 
   // Define socket.io events and handlers here
   // For example, you can listen for client messages:
-  socket.on('chat message', (message) => {
+  socket.on('game/new', (message) => {
     console.log(`Received message: ${message}`);
     // Broadcast the message to all connected clients
     io.emit('chat message', message);
