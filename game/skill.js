@@ -26,7 +26,7 @@ class Skill {
   }
   
   play() {
-    this.cooldown += this.data.cd;
+    this.cooldown += this.calcSeconds(this.data.cd);
     console.log(`${this.caster.getName()} from ${this.caster.getPlayer().getPseudo()} casts ${this.data.name}!`);
 
     for(let effectId of this.data.effects) {
@@ -36,7 +36,7 @@ class Skill {
     }
     
     if(this.data.active) {
-      this.caster.setSeconds(this.calcSeconds);
+      this.caster.setSeconds(this.calcSeconds(this.data.seconds));
       Store.dispatch('skill/active_casted', this.caster);
     }
   }
@@ -47,8 +47,8 @@ class Skill {
   }
 
   
-  calcSeconds() {
-    return this.data.seconds * (3000 / (3000 + this.caster.getSpeed()));
+  calcSeconds(baseSeconds) {
+    return baseSeconds * (3000 / (3000 + this.caster.getSpeed()));
   }
   
   getTargetsId() {

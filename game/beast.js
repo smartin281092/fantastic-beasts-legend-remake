@@ -45,9 +45,11 @@ class Beast {
   
   play() {
     for(let entry of this.skills) {
-      if(entry.skill.getCD() <= 0) {
+      if(entry.skill.cooldown <= 0) {
         entry.skill.play();
         break;
+      } else {
+        console.log(entry.skill.cooldown)
       }
     }
   }

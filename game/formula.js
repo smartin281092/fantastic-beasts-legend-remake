@@ -25,8 +25,9 @@ class Formula {
     
     if(canCrit) {
       const randomCrit = Math.random();
+      let skillCC = skill.data.cc ? skill.data.cc : 0;
       
-      if(randomCrit <= (caster.getCC() + skill.data.cc)) {
+      if(randomCrit <= (caster.getCC() + skillCC)) {
         console.log('Critical Hit!');
         Store.dispatch(`skill_${skill.ueid}/cc`, true)
         critMultiplier = 1.5;
