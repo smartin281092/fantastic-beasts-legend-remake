@@ -6,7 +6,7 @@
       "beasts": [
         {
           "id": "1",
-          "classId": "1",
+          "classId": "2",
           "hp": 310,
           "def": 10,
           "atk": 100,
