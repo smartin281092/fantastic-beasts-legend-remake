@@ -22,8 +22,13 @@ class Beast {
     
     this.skills = [];
     for(let i = 0; i < this.beastData.skills.length; i++) {
-      this.skills.push(new Skill(this.beastData.skills[i].id, this));
+      this.skills.push({
+        skill: new Skill(this.beastData.skills[i].id, this),
+        priority: this.beastData.skills[i].priority
+      })
     }
+    
+    this.skills.sort()
     
     Store.subscribe('timeline/time_elapsed', this.reducer.bind(this));
   }
@@ -47,8 +52,6 @@ class Beast {
   }
   
   resetSeconds() {
-        this.activeBeast.resetSeconds();
-
     this.seconds = 0;
   }
   

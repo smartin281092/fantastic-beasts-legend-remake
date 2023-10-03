@@ -11,10 +11,18 @@ class Skill {
     this.cooldown = 0;
     
     this.caster = caster;
+    
+    Store.subscribe('timeline/time_elapsed', this.reducer.bind(this));
   }
   
   reducer(event, payload) {
-    
+    switch(event) {
+      case `timeline/time_elapsed`:
+        this.updateSeconds(payload);
+        break;
+      default:
+        console.log('No reducer function found.')
+    }
   }
   
   play() {
@@ -32,6 +40,12 @@ class Skill {
       Store.dispatch('skill/active_casted', this.caster);
     }
   }
+  
+  updateSeconds(seconds) {
+    this.cooldown += seconds;
+    if(this.cooldown < 0) this.cooldown = 0;
+  }
+
   
   calcSeconds() {
     return this.data.seconds * (3000 / (3000 + this.caster.getSpeed()));
