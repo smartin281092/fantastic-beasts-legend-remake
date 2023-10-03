@@ -57,7 +57,8 @@ class Timeline {
     
     this.activeBeast = this.roster.shift();
     this.timer += this.activeBeast.getSeconds();
-    this.activeBeast.resetSeconds();
+    Store.dispatch('timeline/time_elapsed', this.activeBeast.getSeconds());
+
     this.activeBeast.play();
   }
   

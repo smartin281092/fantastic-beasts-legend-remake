@@ -24,13 +24,31 @@ class Beast {
     for(let i = 0; i < this.beastData.skills.length; i++) {
       this.skills.push(new Skill(this.beastData.skills[i].id, this));
     }
+    
+    Store.subscribe('timeline/time_elapsed', this.reducer.bind(this));
+  }
+  
+  reducer(event, payload) {
+    switch(event) {
+      case `timeline/time_elapsed`:
+        this.updateSeconds(payload);
+        break;
+      default:
+        console.log('No reducer function found.')
+    }
   }
   
   play() {
     this.skills[0].play();
   }
   
+  updateSeconds(seconds) {
+    this.seconds += seconds;
+  }
+  
   resetSeconds() {
+        this.activeBeast.resetSeconds();
+
     this.seconds = 0;
   }
   

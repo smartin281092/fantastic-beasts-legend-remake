@@ -8,6 +8,7 @@ class Skill {
   constructor(id, caster) {
     this.id = id;
     this.data = Db.getElementById(id, 'skills');
+    this.cooldown = 0;
     
     this.caster = caster;
   }
@@ -17,6 +18,7 @@ class Skill {
   }
   
   play() {
+    this.cooldown += this.data.cd;
     console.log(`${this.caster.getName()} from ${this.caster.getPlayer().getPseudo()} casts ${this.data.name}!`);
 
     for(let effectId of this.data.effects) {
