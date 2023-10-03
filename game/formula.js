@@ -15,7 +15,7 @@ class Formula {
     return num;
   }
   
-  static calculDamage(value, caster, target, ueid, canCrit = true, isDodgeable = true) {
+  static calculDamage(value, caster, target, skill, canCrit = true, isDodgeable = true) {
     let critMultiplier = 1;
     
     if((Math.random() + caster.getHit()) <= target.getDodge() && isDodgeable) {
@@ -26,9 +26,9 @@ class Formula {
     if(canCrit) {
       const randomCrit = Math.random();
       
-      if(randomCrit <= caster.getCC()) {
+      if(randomCrit <= (caster.getCC() + skill.data.cc)) {
         console.log('Critical Hit!');
-        Store.dispatch(`skill_${ueid}/cc`, true)
+        Store.dispatch(`skill_${skill.ueid}/cc`, true)
         critMultiplier = 1.5;
       }
     }

@@ -33,11 +33,10 @@ class Effect {
   
   
   applyEffect_1() {
-    
     let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
     
     let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;
-    let dmg = Formula.calculDamage(value, this.skill.caster, target, this.ueid, true, this.data.isDodgeable);
+    let dmg = Formula.calculDamage(value, this.skill.caster, target, this, true, this.data.isDodgeable);
     
     target.removeHp(dmg)
   }
@@ -48,6 +47,12 @@ class Effect {
     } else {
       Store.subscribe(`skill_${this.ueid}/cc`, this.applyEffect_2.bind(this));
       
+      let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
+    
+      let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;
+      let dmg = Formula.calculDamage(value, this.skill.caster, target, this, true, this.data.isDodgeable);
+
+      target.removeHp(dmg)
       // apply the attack and include the critical hit chance bonus of the spell
     }
   }

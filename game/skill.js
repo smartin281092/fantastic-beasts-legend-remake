@@ -35,6 +35,10 @@ class Skill {
     return this.data.seconds * (3000 / (3000 + this.caster.getSpeed()));
   }
   
+  getTargetsId() {
+    return this.data.targets;
+  }
+  
   getId() {
     return this.data.id;
   }
