@@ -55,6 +55,10 @@ class Skill {
     return this.data.targets;
   }
   
+  getCD() {
+    return this.cooldown;
+  }
+  
   getId() {
     return this.data.id;
   }

@@ -28,7 +28,7 @@ class Beast {
       })
     }
     
-    this.skills.sort()
+    this.skills.sort((a, b) => a.priority - b.priority); 
     
     Store.subscribe('timeline/time_elapsed', this.reducer.bind(this));
   }
@@ -44,7 +44,12 @@ class Beast {
   }
   
   play() {
-    this.skills[0].play();
+    for(let entry of this.skills) {
+      if(entry.skill.getCD() <= 0) {
+        entry.skill.play();
+        break;
+      }
+    }
   }
   
   updateSeconds(seconds) {
