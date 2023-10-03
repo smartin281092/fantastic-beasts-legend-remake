@@ -23,7 +23,17 @@ class Effect {
     }
   }
   
+  getTargets(id) {
+    switch (this.skill.getTargetsId()) {
+      case "singleEnemyTank":            // Get the tankiest opponent target
+        return this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
+        break;
+    }
+  }
+  
+  
   applyEffect_1() {
+    
     let target = this.skill.caster.getPlayer().getOpponent().getTankiestBeast();
     
     let value = (this.skill.caster.getAtk() * this.data.pAtk) / 100;

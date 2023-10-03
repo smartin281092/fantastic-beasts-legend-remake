@@ -7,6 +7,7 @@
         "active": true,
         "seconds": 100,
         "cd": 0,
+        "targets": "singleEnemyTank",
         "effects": ["1"]
       },
       {
@@ -17,6 +18,7 @@
         "seconds": 200,
         "cd": 400,
         "cc": 0.3,
+        "targets": "singleEnemyTank",
         "effects": ["2"]
       }
 
