@@ -43,7 +43,9 @@ class Effect {
   
   applyEffect_2(notified = false) {
     if(notified) {
-      // create new effect id 1 when critical hit notified
+      let effect = Db.getElementById(this.data.comboEffectId, 'effects');
+      
+      new Effect(effect, this.skill);
     } else {
       Store.subscribe(`skill_${this.ueid}/cc`, this.applyEffect_2.bind(this));
       
@@ -53,7 +55,6 @@ class Effect {
       let dmg = Formula.calculDamage(value, this.skill.caster, target, this, true, this.data.isDodgeable);
 
       target.removeHp(dmg)
-      // apply the attack and include the critical hit chance bonus of the spell
     }
   }
 }

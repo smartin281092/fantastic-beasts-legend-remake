@@ -15,7 +15,26 @@
         "def": 28,
         "atk": 170,
         "speed": 158
+      },
+      {
+        "id": "1",
+        "name": "Shenghuang",
+        "typeId": "1",
+        "role": "warrior",
+        "skills": [
+          {
+            "id": "1",
+            "priority": 10
+          },
+          {
+            "id": "2",
+            "priority": 1
+          }
+        ],
+        "hp": 1234,
+        "def": 28,
+        "atk": 170,
+        "speed": 158
       }
-
   ]
 }

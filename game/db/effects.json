@@ -9,7 +9,7 @@
       "id": "2",
       "pAtk": 181,
       "isDodgeable": true,
-      "comboEffectId": 1 
+      "comboEffectId": "1" 
     }
   ]
 }

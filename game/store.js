@@ -28,7 +28,7 @@ const Store = {
         observer(event, data);
       });
     } else {
-      console.log('No observer for : ', event, eventObservers)
+      console.log('No observer for : ', event, data)
     }
   },
   
