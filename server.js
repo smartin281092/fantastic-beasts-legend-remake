@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
@@ -13,14 +14,14 @@ const Challenge = require('./game/challenge');
 
 
 // Serve static files (your frontend) from a directory
-app.use(express.static('public')); // Replace 'public' with the path to your frontend files
+app.use('/pulic', express.static(path.join(__dirname, 'pulic')));
 
 // Define an endpoint to serve your HTML file
 app.get('/game', (req, res) => {
   // Render your frontend project here
   let challenge = new Challenge('1', '2').start();
 
-  res.sendFile(__dirname + '/public/index.html'); // Replace with the path to your HTML file
+  res.sendFile(path.join(__dirname, 'public', 'index.html')); // Replace with the path to your HTML file
 });
 
 // Set up Socket.io
