@@ -1,6 +1,7 @@
 Note conceptuel sur le jeu :
-1 hp = 1 p
+1 hp = 1 bp
 1 atk = 10 bp
+1 def = 
 1% crit = atkbp*1.005
 1% dodge = atkbp*1.01
 
