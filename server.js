@@ -13,6 +13,8 @@ const Db = require('./game/db');
 const Challenge = require('./game/challenge');
 
 
+let challenge = new Challenge('1', '2').start();
+
 // Serve static files (your frontend) from a directory
 app.use('/client', express.static(path.join(__dirname, 'client')));
 
