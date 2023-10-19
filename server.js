@@ -16,7 +16,7 @@ const Db = require('./game/db');
 const Challenge = require('./game/challenge');
 
 
-// Serve static files (your frontend) from a directory
+// Serve static files from client
 app.use('/client', express.static(path.join(__dirname, 'client')));
 
 // Define an endpoint to serve your HTML file
@@ -31,12 +31,16 @@ app.get('/game', (req, res) => {
 io.on('connection', (socket) => {
   console.log('A user connected');
 
-  socket
+  socket.emit('client/connected', 'I hear you');
+  
   socket.on('game/new', (message) => {
     console.log(`Received message: ${message}`);
     io.emit('chat message', message);
   });
 
+  socket.on('test', () => {
+    console.log('test réussi! event envoyé depuis le client.')
+  })
   socket.on('disconnect', () => {
     console.log('A user disconnected');
   });
