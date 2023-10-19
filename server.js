@@ -28,15 +28,11 @@ app.get('/game', (req, res) => {
 io.on('connection', (socket) => {
   console.log('A user connected');
 
-  // Define socket.io events and handlers here
-  // For example, you can listen for client messages:
   socket.on('game/new', (message) => {
     console.log(`Received message: ${message}`);
-    // Broadcast the message to all connected clients
     io.emit('chat message', message);
   });
 
-  // Handle disconnects
   socket.on('disconnect', () => {
     console.log('A user disconnected');
   });
@@ -44,5 +40,5 @@ io.on('connection', (socket) => {
 
 // Start the server
 server.listen(port, () => {
- console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
