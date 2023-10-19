@@ -31,6 +31,7 @@ app.get('/game', (req, res) => {
 io.on('connection', (socket) => {
   console.log('A user connected');
 
+  socket
   socket.on('game/new', (message) => {
     console.log(`Received message: ${message}`);
     io.emit('chat message', message);
