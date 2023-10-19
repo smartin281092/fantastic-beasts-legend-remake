@@ -29,7 +29,7 @@ app.get('/game', (req, res) => {
 
 // Set up Socket.io
 io.on('connection', (socket) => {
-  console.log('A user connected');
+  console.log('A user connected : ', socket.id);
 
   socket.emit('client/connected', 'I hear you');
   
@@ -44,7 +44,11 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('A user disconnected');
   });
+  
+  io.emit('global/test', 'global test');
+
 });
+
 
 // Start the server
 server.listen(port, () => {
