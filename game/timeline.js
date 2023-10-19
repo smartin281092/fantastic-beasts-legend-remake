@@ -24,6 +24,9 @@ class Timeline {
 
     this.sort();
     
+  }
+  
+  start() {
     // next() will initiate the fight and will not stop until the battle is over.
     this.next();
   }
@@ -68,12 +71,6 @@ class Timeline {
     for (let i = 0; i < this.roster.length; i++) {
       if (this.roster[i] === beast) {
         this.roster.splice(i, 1);
-        
-        if(this.roster.length == 0) {
-          this.gameover = true;
-          console.log('Battle finish!')
-        }
-
         break;
       }
     }

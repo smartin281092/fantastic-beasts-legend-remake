@@ -5,8 +5,9 @@ const Beast = require('./beast');
 
 
 class Player {
-  constructor(id) {
+  constructor(id, challenge) {
     this.data = Db.getElementById(id, 'players');
+    this.challenge = challenge;
 
     this.opponent;
     this.aliveBeasts = [];
@@ -37,6 +38,10 @@ class Player {
         this.aliveBeasts.splice(i, 1);
         break;
       }
+    }
+    
+    if(this.aliveBeasts.length == 0) {
+      this.challenge.gameOver();
     }
   }
   
