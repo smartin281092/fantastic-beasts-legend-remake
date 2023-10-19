@@ -3,15 +3,18 @@ const path = require('path');
 
 const app = express();
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+const io = require('socket.io')(server, {
+  cors: {
+    origin: '*'
+  },
+});
 const port = process.env.PORT || 8080;
+
 
 const fs = require('fs');
 const Db = require('./game/db');
 const Challenge = require('./game/challenge');
 
-
-let challenge = new Challenge('1', '2').start();
 
 // Serve static files (your frontend) from a directory
 app.use('/client', express.static(path.join(__dirname, 'client')));
