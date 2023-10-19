@@ -1,12 +1,10 @@
 const express = require('express');
-const http = require('http');
-const socketIo = require('socket.io');
 const path = require('path');
 
 const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
-const port = process.env.PORT || 3000; // Use the port of your choice
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+const port = process.env.PORT || 8080;
 
 const fs = require('fs');
 const Db = require('./game/db');
@@ -45,6 +43,6 @@ io.on('connection', (socket) => {
 });
 
 // Start the server
-//server.listen(port, () => {
- // console.log(`Server is running on port ${port}`);
-//});
+server.listen(port, () => {
+ console.log(`Server is running on port ${port}`);
+});
